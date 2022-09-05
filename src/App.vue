@@ -9,9 +9,8 @@ import { THXClient } from "@thxprotocol/sdk";
 import HelloWorld from "./components/HelloWorld.vue";
 
 const client = new THXClient({
-  clientId: "2M07qh8c16Eu_e7f78md5",
-  clientSecret:
-    "m301KSeyeRFwRHxRfOnYMFD6vFDL5pndfT96XEgASVU6MWM40xM48HqSnRDM8xuD2S4tv1Yzx0ZDYeE3fd5Pvg",
+  clientId: process.env["VUE_APP_CLIENT_ID"],
+  clientSecret: process.env["VUE_APP_CLIENT_SECRET"],
   grantType: "authorization_code",
   redirectUrl: "http://localhost:8080/signin-oidc",
 });
@@ -28,6 +27,7 @@ export default {
   },
 
   async mounted() {
+    console.log(process.env)
     const authenticated = await client.init();
     if (!authenticated) await client.signin();
   },
