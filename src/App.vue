@@ -11,7 +11,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 const client = new THXClient({
   clientId: process.env["VUE_APP_CLIENT_ID"],
   clientSecret: process.env["VUE_APP_CLIENT_SECRET"],
-  grantType: "authorization_code",
+  grantType: "client_credentials",
   redirectUrl: "http://localhost:8080/signin-oidc",
 });
 
@@ -27,9 +27,9 @@ export default {
   },
 
   async mounted() {
-    console.log(process.env)
     const authenticated = await client.init();
     if (!authenticated) await client.signin();
+    else console.log(await client.account.get());
   },
 };
 </script>
