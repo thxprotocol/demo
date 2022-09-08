@@ -121,7 +121,7 @@ Alternatively if you want to just have a single hero
         </div>
       </nav>
 
-      <div class="md:w-1/2 p-2 xl:w-1/2">
+      <div class="md:w-1/3 p-2 xl:w-1/2">
         <a href="#">
           <vue-json-pretty
             virtual
@@ -154,7 +154,7 @@ Alternatively if you want to just have a single hero
         </a>
       </div>
 
-    <div class="md:w-1/2  p-2 xl:w-1/2">
+    <div class="md:w-1/3  p-2 xl:w-1/2">
         <a href="#">
           <vue-json-pretty
             virtual
