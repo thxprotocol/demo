@@ -11,8 +11,9 @@ import HelloWorld from "./components/HelloWorld.vue";
 const client = new THXClient({
   clientId: process.env["VUE_APP_CLIENT_ID"],
   clientSecret: process.env["VUE_APP_CLIENT_SECRET"],
-  grantType: "client_credentials",
-  redirectUrl: "http://localhost:8080/signin-oidc",
+  grantType: "authorization_code",
+  redirectUrl: "http://192.168.1.24:8080/signin-oidc",
+  scopes: 'openid account:read erc20:read erc721:read',
 });
 
 export default {
